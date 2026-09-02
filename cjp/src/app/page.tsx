@@ -130,12 +130,7 @@ export default function Home() {
     sleep_anywhere: false,
   });
 
-  const [eligibilityScore, setEligibilityScore] = useState(0);
-
-  useEffect(() => {
-    const count = Object.values(checkedCriteria).filter(Boolean).length;
-    setEligibilityScore(count);
-  }, [checkedCriteria]);
+  const eligibilityScore = Object.values(checkedCriteria).filter(Boolean).length;
 
   const toggleCriteria = (id: string) => {
     setCheckedCriteria(prev => ({
@@ -457,7 +452,7 @@ export default function Home() {
             <div className="lg:col-span-7 flex flex-col justify-center text-left">
               <span className="text-brand-saffron font-sans font-black text-xs uppercase tracking-widest mb-3">Our Core Philosophy</span>
               <h2 className="font-serif text-4xl sm:text-5xl font-black text-brand-text leading-tight mb-6">
-                Our Movement's <br />
+                Our Movement&apos;s <br />
                 <span className="font-serif italic font-black text-brand-saffron">Vision.</span>
               </h2>
               
@@ -477,7 +472,7 @@ export default function Home() {
                   <div>
                     <div className="font-sans font-bold text-xs uppercase text-brand-saffron tracking-wider mb-1">Key Pillar Of CJP</div>
                     <p className="font-serif italic font-medium text-brand-text text-base leading-relaxed">
-                      "Redefining success not by how much you do, but by how peaceful you remain in the face of societal pressure."
+                      &quot;Redefining success not by how much you do, but by how peaceful you remain in the face of societal pressure.&quot;
                     </p>
                   </div>
                 </div>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restro Dining | Table Booking</title>
+    <meta
+      name="description"
+      content="Book a table at Restro Dining for an exquisite fine dining experience."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Restro.</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#ambiance">Ambiance</a></li>
+        <li><a href="#book" class="nav-book-btn">Book Table</a></li>
+      </ul>
+    </nav>
+
+    <header id="home" class="hero">
+      <div class="hero-content">
+        <h1>A Culinary <span>Masterpiece</span></h1>
+        <p>Experience the finest dining in the heart of the city.</p>
+        <a href="#book" class="cta-btn">Reserve Your Table</a>
+      </div>
+    </header>
+
+    <section id="ambiance" class="ambiance-section">
+      <div class="ambiance-text">
+        <h2>The Perfect Atmosphere</h2>
+        <p>
+          Our dining room is designed to provide an intimate and luxurious
+          experience, setting the stage for unforgettable memories.
+        </p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="gallery_dish.jpg" alt="Beautifully plated dish" />
+        </div>
+        <div class="gallery-item">
+          <img src="gallery_bar.jpg" alt="Luxurious bar area" />
+        </div>
+        <div class="gallery-item">
+          <img src="gallery_table.jpg" alt="Romantic table setup" />
+        </div>
+      </div>
+    </section>
+
+    <section id="book" class="booking-section">
+      <div class="booking-container">
+        <div class="booking-header">
+          <h2>Book a Table</h2>
+          <p>Reserve your spot at Restro Dining</p>
+        </div>
+
+        <form id="booking-form" class="booking-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" id="time" name="time" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="guests">Number of Guests</label>
+            <select id="guests" name="guests" required>
+              <option value="" disabled selected>Select guests</option>
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6+">6+ People</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john@example.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="requests">Special Requests (Optional)</label>
+            <textarea
+              id="requests"
+              name="requests"
+              rows="3"
+              placeholder="Allergies, anniversaries..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Confirm Reservation</button>
+        </form>
+
+        <div id="success-message" class="success-message hidden">
+          <h3>Reservation Confirmed!</h3>
+          <p>
+            We look forward to hosting you at Restro Dining. A confirmation
+            email has been sent to your address.
+          </p>
+          <button id="reset-btn" class="reset-btn">Book Another Table</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">Restro.</div>
+        <p>&copy; 2026 Restro Dining. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
