@@ -2,10 +2,12 @@ import Link from "next/link";
 import Head from "next/head";
 import Swiper from 'swiper';
 import 'swiper/css';
+import EmbidlyChat from "../../components/EmbidlyChat";
 
 export default function Home() {
   return (
     <>
+    <EmbidlyChat/>
       <Head>
         <title>Geek Set Web | Premium Tech Education</title>
         <meta name="description" content="Master full stack development with Geek Set Web." />
