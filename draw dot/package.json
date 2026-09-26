@@ -1,0 +1,21 @@
+{
+  "name": "draw-dot",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "fabric": "^7.4.0",
+    "lucide": "^1.48.0",
+    "perfect-freehand": "^1.2.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

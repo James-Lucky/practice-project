@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-canvas: #121317;
+    --dot-color: rgba(255, 255, 255, 0.08);
+    --grid-line-color: rgba(255, 255, 255, 0.04);
+  }
+
+  [data-theme="light"] {
+    --bg-canvas: #ffffff;
+    --dot-color: rgba(0, 0, 0, 0.12);
+    --grid-line-color: rgba(0, 0, 0, 0.05);
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Canvas Layer Stack */
+.canvas-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-layer-bg {
+  pointer-events: none;
+  z-index: 1;
+  background-position: 0 0;
+  background-size: 24px 24px;
+}
+
+.canvas-layer-bg.pattern-dots {
+  background-image: radial-gradient(var(--dot-color) 1.2px, transparent 1.2px);
+}
+
+.canvas-layer-bg.pattern-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+}
+
+.canvas-layer-bg.pattern-none {
+  background-image: none;
+}
+
+.canvas-layer-content {
+  z-index: 2;
+}
+
+.canvas-layer-content .canvas-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.canvas-layer-overlay {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.canvas-layer-overlay.interactive {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+/* Transparent swatch checkerboard */
+.transparent-swatch {
+  background: repeating-conic-gradient(#808080 0% 25%, #ffffff 0% 50%) 50% / 10px 10px !important;
+}
+
+/* Pulse animation for header dot */
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.85; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 3s infinite ease-in-out;
+}
