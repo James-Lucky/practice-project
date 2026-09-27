@@ -12,15 +12,17 @@ import myBusinessContext from "../data/embidlyContext";
 export default function EmbidlyChat() {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Automatically picks up your API key from .env (Vite or Next.js)
+  const env = import.meta.env as Record<string, string | undefined>;
+  const procEnv = (globalThis as { process?: { env?: Record<string, string | undefined> } }).process?.env;
+
   const apiKey =
-    (typeof process !== "undefined"
-      ? process.env?.NEXT_PUBLIC_MISTRAL_API_KEY ||
-        process.env?.NEXT_PUBLIC_GEMINI_API_KEY ||
-        process.env?.NEXT_PUBLIC_OPENAI_API_KEY
-      : undefined) ||
-    import.meta.env.VITE_MISTRAL_API_KEY ||
-    import.meta.env.VITE_GEMINI_API_KEY ||
-    import.meta.env.VITE_OPENAI_API_KEY ||
+    env.VITE_MISTRAL_API_KEY ||
+    env.VITE_GEMINI_API_KEY ||
+    env.VITE_OPENAI_API_KEY ||
+    procEnv?.NEXT_PUBLIC_MISTRAL_API_KEY ||
+    procEnv?.NEXT_PUBLIC_GEMINI_API_KEY ||
+    procEnv?.NEXT_PUBLIC_OPENAI_API_KEY ||
     "";
 
   return (
